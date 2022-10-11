@@ -379,7 +379,10 @@ if(len(sys.argv) < 2) :
     
 propertiesFileName = sys.argv[1]
 print ("propertiesFileName="+sys.argv[1])
-sendRunCommand = sys.argv[2]
+if(len(sys.argv) >= 3):
+    sendRunCommand = sys.argv[2]
+else:
+    sendRunCommand = 0
 if(len(sys.argv) >= 4):
     sourceToRebuildCaptureFile = sys.argv[3];
 else:
