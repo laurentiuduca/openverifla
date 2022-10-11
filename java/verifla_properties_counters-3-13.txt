@@ -27,9 +27,9 @@ LA.totalSignals=16
 LA.signalGroups=2
 # Group 0
 LA.groupName.0=cnta
-LA.groupSize.0=8
+LA.groupSize.0=3
 LA.groupEndian.0=0
 # Group 1
 LA.groupName.1=cntb
-LA.groupSize.1=8
+LA.groupSize.1=13
 LA.groupEndian.1=0

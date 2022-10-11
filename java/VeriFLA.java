@@ -3,6 +3,8 @@ VeriFLA.java
 SPDX-License-Identifier: GPL-2.0
 
 Revision history:
+revision date: 2022/10/10; author: L.-C. Duca
+- corrected lite bug: consider all the starting memory lines before trigger event
 revistion date: 2018/07/20; author: Laurentiu Duca
 - port of SerialPort jssc instead of rxtx
 - redesign of memory contents implied modification in the java source
@@ -250,7 +252,8 @@ public class VeriFLA extends Object {
 		for(j = 0; j < (octetsPerWord-1); j++) {
 			bt_queue_tail_address += ((0x000000FF) & (int) memoryLineBytes[memWords-1][j]) << (8*j);
 		}
-		System.out.println("bt_queue_tail_address=" + bt_queue_tail_address);
+		if(debugVeriFLA)
+			System.out.println("bt_queue_tail_address=" + bt_queue_tail_address);
 		// Find the first <efffective capture memory word>
 		// before the trigger event (not an <emtpy-slot> memory word).
 		if(bt_queue_tail_address == (triggerMatchMemAddr - 1))
@@ -260,11 +263,14 @@ public class VeriFLA extends Object {
 		boolean before_trigger=true;
 		boolean foundAnEffectiveCaptureWord=false, wentBack=false;
 		i = bt_queue_head_address;
+		//System.out.println("bt_queue_head_address=" + bt_queue_head_address);
 		do
 		{
-			for(j = 0; j < (octetsPerWord-1); j++) {
-				if(memoryLineBytes[i][j] != 0)
+			for(j = 0; j < octetsPerWord; j++) {
+				if(memoryLineBytes[i][j] != 0) {
 					foundAnEffectiveCaptureWord = true;
+					//System.out.println("foundAnEffectiveCaptureWord: " + "i="+i+" j="+j+" memoryLineBytes[i][j]="+memoryLineBytes[i][j]);
+				}
 			}
 			if(foundAnEffectiveCaptureWord)
 				break;
@@ -431,11 +437,13 @@ public class VeriFLA extends Object {
 					st = new StringTokenizer(line," ");
 					tNo= st.countTokens();
 					if(tNo != (octetsPerWord+1))
-						fatalError("File " + fileName + " tNo != 2: " + tNo + " != 2" + (octetsPerWord+1));
+						fatalError("File " + fileName + " tNo = " + tNo + " octetsPerWord+1 = " + octetsPerWord+1);
 					st.nextToken();
 					for(j=octetsPerWord-1; j>=0; j--) {
 						memoryLineBytes[i][j] = (byte) Integer.parseInt(st.nextToken(), 16);
+						//System.out.print(memoryLineBytes[i][j] + " ");
 					}
+					//System.out.println();
 					i++;
 					if(i >= memWords)
 						allMemoryRead = true;
@@ -668,7 +676,7 @@ public class VeriFLA extends Object {
 	}
 	
 	// This java app. data members				
-	boolean debugVeriFLA=true;
+	boolean debugVeriFLA=false;
 
 	String propertiesFileName;
 	Properties properties;

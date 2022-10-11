@@ -1,6 +1,6 @@
 `timescale 1ns / 10ps
 
-module capture_20190122_1517_21(clk_of_verifla, la_trigger_matched, cnta, cntb, memory_line_id);
+module capture_20221011_1251_08(clk_of_verifla, la_trigger_matched, cnta, cntb, memory_line_id);
 
 output clk_of_verifla;
 output la_trigger_matched;
@@ -27,239 +27,243 @@ end
 initial begin
 #(10);
 la_trigger_matched = 0;
+memory_line_id=0;
+{cntb,cnta} = 16'b0000000000000000;
+#20;
+// -------------  Current Time:  30*(1ns) 
 memory_line_id=1;
 {cntb,cnta} = 16'b0000000000000001;
 #20;
-// -------------  Current Time:  30*(1ns) 
+// -------------  Current Time:  50*(1ns) 
 memory_line_id=2;
 {cntb,cnta} = 16'b0000000100000010;
 #20;
-// -------------  Current Time:  50*(1ns) 
+// -------------  Current Time:  70*(1ns) 
 memory_line_id=3;
 {cntb,cnta} = 16'b0000000100000011;
 #20;
-// -------------  Current Time:  70*(1ns) 
+// -------------  Current Time:  90*(1ns) 
 memory_line_id=8;
 {cntb,cnta} = 16'b0000001000000100;
 la_trigger_matched = 1;
 #20;
-// -------------  Current Time:  90*(1ns) 
+// -------------  Current Time:  110*(1ns) 
 memory_line_id=9;
 {cntb,cnta} = 16'b0000001000000101;
 #20;
-// -------------  Current Time:  110*(1ns) 
+// -------------  Current Time:  130*(1ns) 
 memory_line_id=10;
 {cntb,cnta} = 16'b0000001100000110;
 #20;
-// -------------  Current Time:  130*(1ns) 
+// -------------  Current Time:  150*(1ns) 
 memory_line_id=11;
 {cntb,cnta} = 16'b0000001100000111;
 #20;
-// -------------  Current Time:  150*(1ns) 
+// -------------  Current Time:  170*(1ns) 
 memory_line_id=12;
 {cntb,cnta} = 16'b0000010000001000;
 #20;
-// -------------  Current Time:  170*(1ns) 
+// -------------  Current Time:  190*(1ns) 
 memory_line_id=13;
 {cntb,cnta} = 16'b0000010000001001;
 #20;
-// -------------  Current Time:  190*(1ns) 
+// -------------  Current Time:  210*(1ns) 
 memory_line_id=14;
 {cntb,cnta} = 16'b0000010100001010;
 #20;
-// -------------  Current Time:  210*(1ns) 
+// -------------  Current Time:  230*(1ns) 
 memory_line_id=15;
 {cntb,cnta} = 16'b0000010100001011;
 #20;
-// -------------  Current Time:  230*(1ns) 
+// -------------  Current Time:  250*(1ns) 
 memory_line_id=16;
 {cntb,cnta} = 16'b0000011000001100;
 #20;
-// -------------  Current Time:  250*(1ns) 
+// -------------  Current Time:  270*(1ns) 
 memory_line_id=17;
 {cntb,cnta} = 16'b0000011000001101;
 #20;
-// -------------  Current Time:  270*(1ns) 
+// -------------  Current Time:  290*(1ns) 
 memory_line_id=18;
 {cntb,cnta} = 16'b0000011100001110;
 #20;
-// -------------  Current Time:  290*(1ns) 
+// -------------  Current Time:  310*(1ns) 
 memory_line_id=19;
 {cntb,cnta} = 16'b0000011100001111;
 #20;
-// -------------  Current Time:  310*(1ns) 
+// -------------  Current Time:  330*(1ns) 
 memory_line_id=20;
 {cntb,cnta} = 16'b0000100000010000;
 #20;
-// -------------  Current Time:  330*(1ns) 
+// -------------  Current Time:  350*(1ns) 
 memory_line_id=21;
 {cntb,cnta} = 16'b0000100000010001;
 #20;
-// -------------  Current Time:  350*(1ns) 
+// -------------  Current Time:  370*(1ns) 
 memory_line_id=22;
 {cntb,cnta} = 16'b0000100100010010;
 #20;
-// -------------  Current Time:  370*(1ns) 
+// -------------  Current Time:  390*(1ns) 
 memory_line_id=23;
 {cntb,cnta} = 16'b0000100100010011;
 #20;
-// -------------  Current Time:  390*(1ns) 
+// -------------  Current Time:  410*(1ns) 
 memory_line_id=24;
 {cntb,cnta} = 16'b0000101000010100;
 #20;
-// -------------  Current Time:  410*(1ns) 
+// -------------  Current Time:  430*(1ns) 
 memory_line_id=25;
 {cntb,cnta} = 16'b0000101000010101;
 #20;
-// -------------  Current Time:  430*(1ns) 
+// -------------  Current Time:  450*(1ns) 
 memory_line_id=26;
 {cntb,cnta} = 16'b0000101100010110;
 #20;
-// -------------  Current Time:  450*(1ns) 
+// -------------  Current Time:  470*(1ns) 
 memory_line_id=27;
 {cntb,cnta} = 16'b0000101100010111;
 #20;
-// -------------  Current Time:  470*(1ns) 
+// -------------  Current Time:  490*(1ns) 
 memory_line_id=28;
 {cntb,cnta} = 16'b0000110000011000;
 #20;
-// -------------  Current Time:  490*(1ns) 
+// -------------  Current Time:  510*(1ns) 
 memory_line_id=29;
 {cntb,cnta} = 16'b0000110000011001;
 #20;
-// -------------  Current Time:  510*(1ns) 
+// -------------  Current Time:  530*(1ns) 
 memory_line_id=30;
 {cntb,cnta} = 16'b0000110100011010;
 #20;
-// -------------  Current Time:  530*(1ns) 
+// -------------  Current Time:  550*(1ns) 
 memory_line_id=31;
 {cntb,cnta} = 16'b0000110100011011;
 #20;
-// -------------  Current Time:  550*(1ns) 
+// -------------  Current Time:  570*(1ns) 
 memory_line_id=32;
 {cntb,cnta} = 16'b0000111000011100;
 #20;
-// -------------  Current Time:  570*(1ns) 
+// -------------  Current Time:  590*(1ns) 
 memory_line_id=33;
 {cntb,cnta} = 16'b0000111000011101;
 #20;
-// -------------  Current Time:  590*(1ns) 
+// -------------  Current Time:  610*(1ns) 
 memory_line_id=34;
 {cntb,cnta} = 16'b0000111100011110;
 #20;
-// -------------  Current Time:  610*(1ns) 
+// -------------  Current Time:  630*(1ns) 
 memory_line_id=35;
 {cntb,cnta} = 16'b0000111100011111;
 #20;
-// -------------  Current Time:  630*(1ns) 
+// -------------  Current Time:  650*(1ns) 
 memory_line_id=36;
 {cntb,cnta} = 16'b0001000000100000;
 #20;
-// -------------  Current Time:  650*(1ns) 
+// -------------  Current Time:  670*(1ns) 
 memory_line_id=37;
 {cntb,cnta} = 16'b0001000000100001;
 #20;
-// -------------  Current Time:  670*(1ns) 
+// -------------  Current Time:  690*(1ns) 
 memory_line_id=38;
 {cntb,cnta} = 16'b0001000100100010;
 #20;
-// -------------  Current Time:  690*(1ns) 
+// -------------  Current Time:  710*(1ns) 
 memory_line_id=39;
 {cntb,cnta} = 16'b0001000100100011;
 #20;
-// -------------  Current Time:  710*(1ns) 
+// -------------  Current Time:  730*(1ns) 
 memory_line_id=40;
 {cntb,cnta} = 16'b0001001000100100;
 #20;
-// -------------  Current Time:  730*(1ns) 
+// -------------  Current Time:  750*(1ns) 
 memory_line_id=41;
 {cntb,cnta} = 16'b0001001000100101;
 #20;
-// -------------  Current Time:  750*(1ns) 
+// -------------  Current Time:  770*(1ns) 
 memory_line_id=42;
 {cntb,cnta} = 16'b0001001100100110;
 #20;
-// -------------  Current Time:  770*(1ns) 
+// -------------  Current Time:  790*(1ns) 
 memory_line_id=43;
 {cntb,cnta} = 16'b0001001100100111;
 #20;
-// -------------  Current Time:  790*(1ns) 
+// -------------  Current Time:  810*(1ns) 
 memory_line_id=44;
 {cntb,cnta} = 16'b0001010000101000;
 #20;
-// -------------  Current Time:  810*(1ns) 
+// -------------  Current Time:  830*(1ns) 
 memory_line_id=45;
 {cntb,cnta} = 16'b0001010000101001;
 #20;
-// -------------  Current Time:  830*(1ns) 
+// -------------  Current Time:  850*(1ns) 
 memory_line_id=46;
 {cntb,cnta} = 16'b0001010100101010;
 #20;
-// -------------  Current Time:  850*(1ns) 
+// -------------  Current Time:  870*(1ns) 
 memory_line_id=47;
 {cntb,cnta} = 16'b0001010100101011;
 #20;
-// -------------  Current Time:  870*(1ns) 
+// -------------  Current Time:  890*(1ns) 
 memory_line_id=48;
 {cntb,cnta} = 16'b0001011000101100;
 #20;
-// -------------  Current Time:  890*(1ns) 
+// -------------  Current Time:  910*(1ns) 
 memory_line_id=49;
 {cntb,cnta} = 16'b0001011000101101;
 #20;
-// -------------  Current Time:  910*(1ns) 
+// -------------  Current Time:  930*(1ns) 
 memory_line_id=50;
 {cntb,cnta} = 16'b0001011100101110;
 #20;
-// -------------  Current Time:  930*(1ns) 
+// -------------  Current Time:  950*(1ns) 
 memory_line_id=51;
 {cntb,cnta} = 16'b0001011100101111;
 #20;
-// -------------  Current Time:  950*(1ns) 
+// -------------  Current Time:  970*(1ns) 
 memory_line_id=52;
 {cntb,cnta} = 16'b0001100000110000;
 #20;
-// -------------  Current Time:  970*(1ns) 
+// -------------  Current Time:  990*(1ns) 
 memory_line_id=53;
 {cntb,cnta} = 16'b0001100000110001;
 #20;
-// -------------  Current Time:  990*(1ns) 
+// -------------  Current Time:  1010*(1ns) 
 memory_line_id=54;
 {cntb,cnta} = 16'b0001100100110010;
 #20;
-// -------------  Current Time:  1010*(1ns) 
+// -------------  Current Time:  1030*(1ns) 
 memory_line_id=55;
 {cntb,cnta} = 16'b0001100100110011;
 #20;
-// -------------  Current Time:  1030*(1ns) 
+// -------------  Current Time:  1050*(1ns) 
 memory_line_id=56;
 {cntb,cnta} = 16'b0001101000110100;
 #20;
-// -------------  Current Time:  1050*(1ns) 
+// -------------  Current Time:  1070*(1ns) 
 memory_line_id=57;
 {cntb,cnta} = 16'b0001101000110101;
 #20;
-// -------------  Current Time:  1070*(1ns) 
+// -------------  Current Time:  1090*(1ns) 
 memory_line_id=58;
 {cntb,cnta} = 16'b0001101100110110;
 #20;
-// -------------  Current Time:  1090*(1ns) 
+// -------------  Current Time:  1110*(1ns) 
 memory_line_id=59;
 {cntb,cnta} = 16'b0001101100110111;
 #20;
-// -------------  Current Time:  1110*(1ns) 
+// -------------  Current Time:  1130*(1ns) 
 memory_line_id=60;
 {cntb,cnta} = 16'b0001110000111000;
 #20;
-// -------------  Current Time:  1130*(1ns) 
+// -------------  Current Time:  1150*(1ns) 
 memory_line_id=61;
 {cntb,cnta} = 16'b0001110000111001;
 #20;
-// -------------  Current Time:  1150*(1ns) 
+// -------------  Current Time:  1170*(1ns) 
 memory_line_id=62;
 {cntb,cnta} = 16'b0001110100111010;
 #20;
-// -------------  Current Time:  1170*(1ns) 
+// -------------  Current Time:  1190*(1ns) 
 $stop;
 end
 endmodule

@@ -1,0 +1,24 @@
+{
+"portName": "/dev/ttyUSB0",
+"baudRate": 115200,
+
+"memWords": 64,
+"_comment1": "Data input width and indentical samples bits (clones) must be multiple of 8",
+"dataWordLenBits": 16,
+"clonesWordLenBits": 8,
+"triggerMatchMemAddr": 8,
+
+"timescaleUnit": "1ns",
+"timescalePrecision": "10ps",
+"_comment2": "clockPeriod expressed in [timescaleUnit]",
+"clockPeriod": 20,
+
+"_comment3": "User data signals",
+"totalSignals": 16,
+"_comment4": "Big endian (1) or Little endian (0).",
+"signalGroups": 2,
+"groups": [
+	{"groupName": "cnta", "groupSize": 8, "groupEndian": 0},
+	{"groupName": "cntb", "groupSize": 8, "groupEndian": 0}
+]
+}
