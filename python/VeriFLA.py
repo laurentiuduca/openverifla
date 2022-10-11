@@ -91,7 +91,7 @@ def rebuildCapturedDataFromFile():
 
 
 def getCapturedData():
-    global memoryLineBytes
+    global memoryLineBytes, sendRunCommand
 
     ser=serial.Serial(portName, baudRate)
     if(ser.isOpen()):
@@ -102,7 +102,9 @@ def getCapturedData():
         x=USERCMD_RUN;
         print("Sending user_run command..");
         ser.write(x);
-        print("Done sending user_run command.");	
+        print("Done sending user_run command.");
+    else:
+        print("sendRunCommand=%d" %sendRunCommand)
 
     # Read Captured data
     print("Waiting for data capture:");
@@ -370,17 +372,18 @@ def job() :
     saveCapturedData()
 
 # main
+#print("received %d arguments" % len(sys.argv))
 if(len(sys.argv) < 2) :
     print("Too few arguments: "+str(len(sys.argv)-1)+
-	"\nSintax is:\n\tpython3 verifla.py <propertiesFileName> [<sendRunCommand>=0/1 (default 0)]\n"+
-	"Examples:\n1. Wait for FPGA to send capture:\n\tpython3 verifla.py verifla_properties_keyboard.json\n"+
-	"2. Send to the monitor the run command and wait for FPGA to send capture:\n\tpython3 verifla.py verifla_properties_keyboard.json 1\n")
+	"\nSintax is:\n\tpython3 VeriFLA.py <propertiesFileName> [<sendRunCommand>=0/1 (default 0)]\n"+
+	"Examples:\n1. Wait for FPGA to send capture:\n\tpython3 VeriFLA.py verifla_properties_keyboard.json\n"+
+	"2. Send to the monitor the run command and wait for FPGA to send capture:\n\tpython3 VeriFLA.py verifla_properties_keyboard.json 1\n")
     sys.exit()
     
 propertiesFileName = sys.argv[1]
 print ("propertiesFileName="+sys.argv[1])
 if(len(sys.argv) >= 3):
-    sendRunCommand = sys.argv[2]
+    sendRunCommand = int(sys.argv[2])
 else:
     sendRunCommand = 0
 if(len(sys.argv) >= 4):
