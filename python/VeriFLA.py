@@ -1,6 +1,10 @@
 """
 Author: L.-C. Duca
 SPDX-License-Identifier: GPL-2.0
+
+20221017-1620
+remove extra indent from two instructions 
+which affected correct groupSize generation
 """
 import sys
 import serial
