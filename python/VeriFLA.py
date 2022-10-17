@@ -99,7 +99,8 @@ def getCapturedData():
     ser.open()
 
     if(sendRunCommand == 1):
-        x=USERCMD_RUN;
+        auxi = USERCMD_RUN;
+        x = auxi.to_bytes(1, 'little')
         print("Sending user_run command..");
         ser.write(x);
         print("Done sending user_run command.");
@@ -206,8 +207,8 @@ def saveCapturedData():
                     strLine += "[0:"+str(groupSize[i]-1)+"] "
                 else:
                     strLine += "["+str(groupSize[i]-1)+":0] "
-                strLine += groupName[i] + ";\n"
-                f.write(strLine)
+            strLine += groupName[i] + ";\n"
+            f.write(strLine)
     strLine = "reg ["+str(int(memWords/4))+":0] memory_line_id;\n" + \
         "reg la_trigger_matched;\n" + \
         "reg clk_of_verifla;" + "\n\n" + \
