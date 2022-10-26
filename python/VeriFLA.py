@@ -54,6 +54,12 @@ def getProperties() :
     memWords = jsondata['memWords']
     dataWordLenBits = jsondata['dataWordLenBits']
     clonesWordLenBits = jsondata['clonesWordLenBits']
+    if((dataWordLenBits % 8) or (clonesWordLenBits % 8)):
+        print("error: dataWordLenBits or clonesWordLenBits are not multiple of 8\n")
+        sys.exit()
+    if(dataWordLenBits != totalSignals):
+        print("error: totalSignals != dataWordLenBits")
+        sys.exit()
     memWordLenBits = dataWordLenBits + clonesWordLenBits
     octetsPerWord = int(memWordLenBits / 8)
     if (memWordLenBits % 8 > 0):
@@ -386,7 +392,7 @@ if(len(sys.argv) < 2) :
     sys.exit()
     
 propertiesFileName = sys.argv[1]
-print ("propertiesFileName="+sys.argv[1])
+print ("Reading propertiesFileName="+sys.argv[1])
 if(len(sys.argv) >= 3):
     sendRunCommand = int(sys.argv[2])
 else:
