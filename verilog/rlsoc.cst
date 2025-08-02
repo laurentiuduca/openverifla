@@ -1,0 +1,26 @@
+IO_LOC "clk" 4;       // crystal
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+IO_LOC "uart_REC_dataH" 70; //30; //70;
+IO_LOC "uart_XMIT_dataH" 69; //31; //69;
+IO_PORT "uart_REC_dataH" IO_TYPE=LVCMOS33;
+IO_PORT "uart_XMIT_dataH" IO_TYPE=LVCMOS33;
+
+//IO_LOC "w_btnr" 87;
+//IO_PORT "w_btnr" PULL_MODE=NONE;
+IO_LOC "reset" 88;
+IO_PORT "reset" PULL_MODE=NONE;
+
+IO_LOC "w_led[5]" 15;
+IO_LOC "w_led[4]" 16;
+IO_LOC "w_led[3]" 17;
+IO_LOC "w_led[2]" 18;
+IO_LOC "w_led[1]" 19;
+IO_LOC "w_led[0]" 20;
+// do not remove the lines below because it avoids place and route error
+IO_PORT "w_led[5]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_PORT "w_led[4]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_PORT "w_led[3]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_PORT "w_led[2]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_PORT "w_led[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
+IO_PORT "w_led[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;

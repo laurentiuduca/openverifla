@@ -225,7 +225,15 @@ public class VeriFLA extends Object {
 		    "end" + "\n\n" ;
 		stream.write(strLine.getBytes());		
 
-		
+		// write dumpfile
+		strLine =
+                    "initial" + "\n" +
+                    "begin" + "\n" +
+                    "    $dumpfile(\"dump.vcd\");" + "\n" +
+                    "    $dumpvars();" + "\n" +
+                    "end" + "\n\n" ;
+                stream.write(strLine.getBytes());
+
 		// Write captured data
 		strLine = "initial begin\n";
 		strLine += "#("+ (int)(clockPeriod / 2) + ");\n";
@@ -391,7 +399,7 @@ public class VeriFLA extends Object {
 		stream.write(strLine.getBytes());	
 				
 		stream.close();
-		System.out.println("Job done. Please simulate " + outputFileName);
+		System.out.println("Job done. Please simulate " + outputFileName + " and then see dump.vcd");
 	}
 	
 	private void allocateMemory()

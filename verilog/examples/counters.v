@@ -1,20 +1,21 @@
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (C) 2020, L-C. Duca
-module counters(cntb,
-	clk, reset,
+module counters(
+	clk, reset, w_led,
 	//top_of_verifla transceiver
 	uart_XMIT_dataH, uart_REC_dataH
 );
 
 
 input clk, reset;
-output [7:0] cntb;
+output wire [5:0] w_led;
 //top_of_verifla transceiver
 input uart_REC_dataH;
 output uart_XMIT_dataH;
 
 // Simple counters
 reg [7:0] cntb, cnta;
+assign w_led = cntb[5:0];
 always @(posedge clk or posedge reset)
 begin
 	if(reset) begin

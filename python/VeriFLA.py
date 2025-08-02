@@ -236,6 +236,14 @@ def saveCapturedData():
         "    end" + "\n" + "end" + "\n\n"
     f.write(strLine);
 
+    # write dump.vcd
+    strLine =  "initial " + "\n" + \
+        "begin" + "\n" + \
+        "    $dumpfile(\"dump.vcd\");" + "\n" + \
+        "    $dumpvars();" + "\n" + \
+        "end" + "\n\n"
+    f.write(strLine);
+
     # Write captured data
     strLine = "initial begin\n"
     strLine += "#("+ str(int(clockPeriod / 2)) + ");\n"
@@ -371,7 +379,7 @@ def saveCapturedData():
     f.write(strLine);	
 				
     f.close();
-    print("Job done. Please simulate " + outputFileName);
+    print("Job done. Please simulate " + outputFileName +  " and after that see dump.vcd");
 
 def job() :
     getProperties()

@@ -1,6 +1,6 @@
-openVeriFLA 2022 - FPGA logic analyzer
+openVeriFLA 2025 - FPGA logic analyzer
 
-openVeriFLA 2022 is an FPGA logic analyzer. The host computer software
+openVeriFLA 2025 is an FPGA logic analyzer. The host computer software
 is written in Java (from 1.0) and Python (from 3.0), in both being fully supported.
 The HDL code is written in Verilog and VHDL, in both languages being fully supported.
 This project helps in on-board testing and debugging of the FPGA projects.
