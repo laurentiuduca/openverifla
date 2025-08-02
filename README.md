@@ -9,7 +9,7 @@ the signals transitions that happen inside the FPGA chip.
 Having a didactic scope, openVeriFLA is designed & tested on and for small projects.
 openVeriFLA comes with its reference manual.
 
-openVeriFLA 3.0 is on https://github.com/laurentiuduca/openverifla
+openVeriFLA 3.1 is on https://github.com/laurentiuduca/openverifla
 
 openVeriFLA 2.4 is on opencores.org
 
